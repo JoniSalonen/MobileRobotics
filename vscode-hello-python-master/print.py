@@ -4,8 +4,6 @@ from time import sleep
 class Print():
 
     def print():
-        print("it works")
-        sleep(10)
-        print("it works")
-        sleep(10)
-        print("it works")
+        print("Assigment 1")
+
+        
