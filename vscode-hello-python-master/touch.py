@@ -1,6 +1,16 @@
 #!/usr/bin/env python3
 
-class TouchSensor():
+from ev3dev2.sensor import *
+from ev3dev2.sensor.lego import *
+from os import system
 
-    def touchSensor():
-        print("TouchSensor")
+
+touch = TouchSensor(INPUT_3)
+
+class TouchSensor():
+    
+    def clear():
+        while True:
+            if touch.is_pressed:
+                system('clear')
+                break

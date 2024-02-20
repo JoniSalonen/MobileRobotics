@@ -11,16 +11,19 @@ from time import sleep
 
 class Motors():
 
-    def motors():
+    def motors_turn(angle):
         tank_dr = MoveTank(OUTPUT_A, OUTPUT_D)
-    #tank_dr.gyro = GyroSensor()
-    #tank_dr.gyro.calibrate()
+        tank_dr.gyro = GyroSensor()
+        tank_dr.gyro.calibrate()
+ 
+        tank_dr.turn_degrees(100, angle)
+        # while True:
 
-        while True:
-            tank_dr.on_for_degrees(30, -30, 180)
 
-            tank_dr.on_for_rotations(30, 30, 3)
+        #     tank_dr.on_for_rotations(30, 30, 3)
 
+    def drive():
+        
 
 
 
