@@ -17,6 +17,26 @@ class Motors():
     #tank_dr.gyro.calibrate()
 
         while True:
+            tangle = tank_dr.gyro.angle - 90
+            if touch.is_pressed:
+                tangle -= 90
+                print("OUCH!")
+                tank_dr.on_for_rotations(-30, -30, 2)
+                while tank_dr.gyro.angle > tangle:
+                    tank_dr.on_for_degrees(30, -30, 5)
+                    print("Gyro Angle:", tank_dr.gyro.angle, "\n Deg to target:", tank_dr.gyro.angle - tangle)
+                    while tank_dr.gyro.angle < tangle:
+                        tank_dr.on_for_degrees(-30, 30, 1)
+                        print("Correcting...", "\n Deg to target:", tank_dr.gyro.angle - tangle)
+            elif time.time_ns > timer:
+
+                while tank_dr.gyro.angle > tangle:
+                    tank_dr.on_for_degrees(30, -30, 5)
+                    print("Gyro Angle:", tank_dr.gyro.angle, "\n Deg to target:", tank_dr.gyro.angle - tangle)
+                    while tank_dr.gyro.angle < tangle:
+                        tank_dr.on_for_degrees(-30, 30, 1)
+                        print("Correcting...", "\n Deg to target:", tank_dr.gyro.angle - tangle)
+                timer = time.time_ns + 2 * 1000
             tank_dr.on_for_degrees(30, -30, 180)
 
             tank_dr.on_for_rotations(30, 30, 3)
