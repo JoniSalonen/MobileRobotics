@@ -11,10 +11,6 @@ from time import sleep
 
 class Motors():
 
-
-    def print():
-        print("it works")
-
     def motors():
         motorA = LargeMotor(OUTPUT_A)
         motorB = LargeMotor(OUTPUT_D)
@@ -51,7 +47,7 @@ class Motors():
                         tank_dr.on_for_degrees(-30, 30, 1)
                         print("Correcting...", "\n Deg to target:", tank_dr.gyro.angle - tangle)
             elif time.time_ns > timer:
-                
+
                 while tank_dr.gyro.angle > tangle:
                     tank_dr.on_for_degrees(30, -30, 5)
                     print("Gyro Angle:", tank_dr.gyro.angle, "\n Deg to target:", tank_dr.gyro.angle - tangle)
