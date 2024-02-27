@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 
+## Joni Salonen D23125498
+## Enrique Juan Gamboa D23125488
+## Tauno Koivisto D23128855
+
 #Import the necessary libraries
 from ev3dev2.sensor import *
 from ev3dev2.sensor.lego import *
-<<<<<<< HEAD
 from time import sleep
 
 #Define the color sensor input
@@ -16,5 +19,5 @@ class LightSensor():
     def sensor():
         sensorValue = colorSensor.color
         print("color:", sensorValue)
-        sleep(10)
+        return sensorValue
 
