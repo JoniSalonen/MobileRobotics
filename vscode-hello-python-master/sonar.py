@@ -14,9 +14,14 @@ sonar = UltrasonicSensor(INPUT_4)
 sonar.MODE_US_DIST_CM = 'US-DIST-CM'
 
 class SonarSensor():
-
+    """
+    Represents a Sonar Sensor used for measuring distances.
+    """
 
     def ultrasonicSensor():
+        """
+        Returns the distance measured by the ultrasonic sensor in centimeters.
+        """
         sensorValue = sonar.distance_centimeters_continuous
         return sensorValue
 

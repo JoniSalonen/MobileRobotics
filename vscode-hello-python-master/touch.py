@@ -12,6 +12,13 @@ from os import system
 touch = TouchSensor(INPUT_3)
 
 class TouchSensor():
+    """
+    Represents a touch sensor.
+
+    Methods:
+    - clear(): Clears the screen when the touch sensor is pressed.
+    - is_pressed(): Checks if the touch sensor is pressed.
+    """
 
     def clear():
         while True:

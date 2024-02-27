@@ -14,27 +14,43 @@ from ev3dev2.sensor.lego import *
 from time import sleep
 
 class Motors():
-
+    """
+    This class represents the motors of a mobile robot.
+    """
 
     def motors_turn(angle):
+        """
+        Turns the motors of the robot by a specified angle.
+
+        Args:
+            angle (int): The angle in degrees to turn the motors.
+        """
         tank_dr = MoveTank(OUTPUT_A, OUTPUT_D)
         tank_dr.gyro = GyroSensor()
         tank_dr.gyro.calibrate()
 
         tank_dr.turn_degrees(50, angle)
-        # while True:
-
-
-        #     tank_dr.on_for_rotations(30, 30, 3)
 
     def drive(speed):
+        """
+        Drives the motors of the robot at a specified speed.
+
+        Args:
+            speed (int): The speed at which to drive the motors.
+        """
         tank_dr = MoveTank(OUTPUT_A, OUTPUT_D)
 
-        tank_dr.on(speed,speed)
-        if(speed == 0):
+        tank_dr.on(speed, speed)
+        if speed == 0:
             tank_dr.stop()
 
     def drive_unit(unit):
+        """
+        Drives the motors of the robot for a specified unit.
+
+        Args:
+            unit (int): The number of units to drive the motors.
+        """
         tank_dr = MoveTank(OUTPUT_A, OUTPUT_D)
 
         tank_dr.on_for_degrees(50, 50, unit * 90)

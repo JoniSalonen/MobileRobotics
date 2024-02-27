@@ -15,8 +15,20 @@ colorSensor.mode = 'COL-COLOR'
 
 #Define the light sensor class
 class LightSensor():
+    """
+    This class represents a light sensor.
+
+    Methods:
+    - sensor(): Returns the value of the color sensor.
+    """
 
     def sensor():
+        """
+        Returns the value of the color sensor.
+
+        Returns:
+        - sensorValue: The value of the color sensor.
+        """
         sensorValue = colorSensor.color
         print("color:", sensorValue)
         return sensorValue

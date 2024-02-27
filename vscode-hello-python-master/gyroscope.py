@@ -15,11 +15,26 @@ gyro.mode = gyro.MODE_GYRO_RATE
 gyro.mode = gyro.MODE_GYRO_ANG
 
 class gyroscope():
+    """
+    A class representing a gyroscope.
+
+    This class provides methods to calibrate and set the mode of the gyroscope.
+    """
 
     def calibrate():
+        """
+        Calibrates the gyroscope.
+
+        This function calibrates the gyroscope by calling the `calibrate()` method of the `gyro` object.
+        It then sets the gyroscope mode to `MODE_GYRO_RATE` and `MODE_GYRO_ANG`.
+
+        """
         gyro.calibrate()
 
+        # Set the gyroscope mode to MODE_GYRO_RATE
         gyro.mode = gyro.MODE_GYRO_RATE
+
+        # Set the gyroscope mode to MODE_GYRO_ANG
         gyro.mode = gyro.MODE_GYRO_ANG
 
 
